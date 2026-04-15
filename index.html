@@ -77,6 +77,59 @@
 
   .footer-text { font-family: 'Caveat', cursive; font-size: 1.1rem; color: #9a5f2a; text-align: center; margin-top: 0.5rem; }
 
+  .flip-card {
+    aspect-ratio: 4/5;
+    perspective: 1000px;
+  }
+  /* apply the nth-child rotations to flip-card instead of photo-slot */
+  .flip-card:nth-child(2) { transform: rotate(1.5deg); }
+  .flip-card:nth-child(3) { transform: rotate(-1deg); }
+  /* ...etc */
+
+  .flip-card-inner {
+    position: relative;
+    width: 100%; height: 100%;
+    transform-style: preserve-3d;
+    transition: transform 0.6s ease;
+  }
+  .flip-card-inner.flipped {
+    transform: rotateY(180deg);
+  }
+  .flip-card-front,
+  .flip-card-back {
+    position: absolute;
+    width: 100%; height: 100%;
+    backface-visibility: hidden;
+    border-radius: 2px;
+  }
+  .flip-card-back {
+    transform: rotateY(180deg);
+    background: #fffdf5;
+    border: 1px solid #c4a070;
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+  }
+  .back-text {
+    flex: 1;
+    font-family: 'Caveat', cursive;
+    font-size: 1rem;
+    color: #3b2a1a;
+    outline: none;
+    line-height: 1.7;
+  }
+  .back-text:empty::before {
+    content: attr(placeholder);
+    color: #b09070;
+  }
+  .flip-back-btn {
+    font-family: 'Caveat', cursive;
+    font-size: 0.8rem;
+    color: #9a6030;
+    cursor: pointer;
+    text-align: right;
+  }
+
   @media(max-width: 600px) {
     .paper-bg { padding: 1.5rem 1rem 2rem; }
     .photo-grid { grid-template-columns: repeat(2, 1fr); }
@@ -99,42 +152,112 @@
     <!-- Photo Gallery -->
     <div class="section-label" style="font-size:x-large;">✦ &nbsp;our favorite moments</div>
     <div class="photo-grid">
-      <div class="photo-slot" >
-        <div class="photo-tape"></div>
-          <img src="./miabirthdaypics/IMG_4455.jpg">
-          <!-- <img src="C:/Users/migue/Desktop/Mias_Birthday/miabirthdaypics/IMG_4455.jpg"> -->
-          <p class="hero-sub" aria style="font-size: large;">Our First Big Concert</p>
+      <div class="flip-card">
+        <div class="flip-card-inner">
+          <!-- FRONT-->
+          <div class="flip-card-front photo-slot">
+            <div class="photo-tape"></div>
+              <img src="./miabirthdaypics/IMG_4455.jpg">
+          </div>
+          <!-- BACK-->
+          <div class="flip-card-back">
+            <div class="photo-tape"></div>
+            <div style="text-align: center;">
+              <p class="hero-title" style="font-size: x-large;"> Our First Big Concert!</p>
+              <div class="divider-line"></div>
+            </div>
+          </div>
+        </div>
       </div>
-      <div class="photo-slot" >
-        <div class="photo-tape"></div>
-          <img src="./miabirthdaypics/100_0326.jpg">
-          <!-- <img src="C:/Users/migue/Desktop/Mias_Birthday/miabirthdaypics/100_0326.jpg"> -->
-          <p class="hero-sub" aria style="font-size: large;">Parties with our friends</p>
+      <div class="flip-card">
+        <div class="flip-card-inner">
+          <!-- FRONT-->
+          <div class="flip-card-front photo-slot">
+            <div class="photo-tape"></div>
+            <img src="./miabirthdaypics/100_0326.jpg">
+          </div>
+          <!-- BACK-->
+          <div class="flip-card-back">
+            <div class="photo-tape"></div>
+            <div style="text-align: center;">
+              <p class="hero-title" style="font-size: x-large;"> Parties with our friends!</p>
+              <div class="divider-line"></div>
+            </div>
+          </div>
+        </div>
       </div>
-      <div class="photo-slot" >
-        <div class="photo-tape"></div>
-          <img src="./miabirthdaypics/IMG_5522.JPG">
-          <!-- <img src="C:/Users/migue/Desktop/Mias_Birthday/miabirthdaypics/IMG_5522.JPG"> -->
-          <p class="hero-sub" aria style="font-size: large;">Hiding from Seattle rain</p>
+      <div class="flip-card">
+        <div class="flip-card-inner">
+          <!-- FRONT-->
+          <div class="flip-card-front photo-slot">
+            <div class="photo-tape"></div>
+            <img src="./miabirthdaypics/IMG_5522.JPG">
+            <p class="hero-sub" aria style="font-size: large;"></p>
+          </div>
+          <!-- BACK-->
+          <div class="flip-card-back">
+            <div class="photo-tape"></div>
+            <div style="text-align: center;">
+              <p class="hero-title" style="font-size: x-large;">Hiding from Seattle Rain!</p>
+              <div class="divider-line"></div>
+            </div>
+          </div>
+        </div>
       </div>
-      <div class="photo-slot" >
-        <div class="photo-tape"></div>
-          <img src="./miabirthdaypics/IMG_8084.jpg">
-          <!-- <img src="C:/Users/migue/Desktop/Mias_Birthday/miabirthdaypics/IMG_8084.jpg"> -->
-          <p class="hero-sub" aria style="font-size: large;">Oktoberfest!</p>
+      <div class="flip-card">
+        <div class="flip-card-inner">
+          <!-- FRONT-->
+          <div class="flip-card-front photo-slot">
+            <div class="photo-tape"></div>
+            <img src="./miabirthdaypics/IMG_8084.jpg">
+          </div>
+          <!-- BACK-->
+          <div class="flip-card-back">
+            <div class="photo-tape"></div>
+            <div style="text-align: center;">
+              <p class="hero-title" style="font-size: x-large;">Oktoberfest!</p>
+              <div class="divider-line"></div>
+            </div>
+          </div>
+        </div>
       </div>
-      <div class="photo-slot" >
-        <div class="photo-tape"></div>
-          <img src="./miabirthdaypics/IMG_2863.jpg">
-          <!-- <img src="C:/Users/migue/Desktop/Mias_Birthday/miabirthdaypics/IMG_2863.jpg"> -->
-          <p class="hero-sub" aria style="font-size: large;">Corn Maze!</p>
+      <div class="flip-card">
+        <div class="flip-card-inner">
+          <!-- FRONT-->
+          <div class="flip-card-front photo-slot">
+            <div class="photo-tape"></div>
+            <img src="./miabirthdaypics/IMG_2863.jpg">
+          </div>
+          <!-- BACK-->
+          <div class="flip-card-back">
+            <div class="photo-tape"></div>
+            <div style="text-align: center;">
+              <p class="hero-title" style="font-size: x-large;">Corn Maze!</p>
+              <div class="divider-line"></div>
+            </div>
+          </div>
+        </div>
       </div>
-      <div class="photo-slot" >
-        <div class="photo-tape"></div>
-          <img src="./miabirthdaypics/IMG_4831.JPG">
-          <!-- <img src="C:/Users/migue/Desktop/Mias_Birthday/miabirthdaypics/IMG_4831.JPG"> -->
-          <p class="hero-sub" aria style="font-size: large;">Disneyland!</p>
+      <div class="flip-card">
+        <div class="flip-card-inner">
+          <!-- FRONT-->
+          <div class="flip-card-front photo-slot">
+            <div class="photo-tape"></div>
+            <img src="./miabirthdaypics/IMG_4831.JPG">
+            <p class="hero-sub" aria style="font-size: large;"></p>
+          </div>
+          <!-- BACK-->
+          <div class="flip-card-back">
+            <div class="photo-tape"></div>
+            <div style="text-align: center;">
+              <p class="hero-title" style="font-size: x-large;">Disneyland!</p>
+              <div class="divider-line"></div>
+            </div>
+          </div>
+        </div>
       </div>
+      
+
     </div>
 
     <div class="divider"><div class="divider-line"></div><div class="divider-icon">✦</div><div class="divider-line"></div></div>
@@ -142,11 +265,12 @@
     <!-- Love Letter -->
     <div class="section-label" style="font-size:x-large;">✦ &nbsp;a letter for you</div>
     <div class="letter-card">
-      <p class="letter-greeting">My darling,</p>
-      <p>On this special day, I want you to know how endlessly grateful I am to have you in my life. Every ordinary moment becomes extraordinary with you beside me — your laugh, your kindness, the way you see the world.</p>
-      <p style="margin-top: 0.8rem;">This past year has been one for the books, and I couldn't have written it without you. You have grown so much, and watching you bloom has been one of the greatest honors of my life.</p>
+      <p class="letter-greeting">My Mimi,</p>
+      <p>On this special day, I want you to know how endlessly grateful I am to have you in my life. Every ordinary moment becomes extraordinary with you beside me. Your laugh, your kindness, your love make every moment with you memorable.</p>
+      <p style="margin-top: 0.8rem;">This past year has been so many firsts for you, first new car, first big job, first degree, first apartment. You have grown so much, and watching you bloom has been one of the greatest honors of my life. I'm very greatful for every one of your big moments I was able to witness</p>
+      <p style="margin-top: 0.8rem;">Theres not a day that goes by with you that I take for granted. The love I have for you is never ending and I still can't give you all the love you deserve! You are so smart, so beautiful and so absolutely perfect.</p>
       <p style="margin-top: 0.8rem;">Here's to you, to us, and to all the adventures still ahead. Happy birthday, my love.</p>
-      <p class="letter-sign">Always yours ♡</p>
+      <p class="letter-sign">Always yours, </br>Miggy ♡</p>
     </div>
 
     <div class="divider"><div class="divider-line"></div><div class="divider-icon">✦</div><div class="divider-line"></div></div>
@@ -213,4 +337,19 @@
   </div>
 </div>
 </body>
+<script>
+  // clicking the front flips it
+  document.querySelectorAll('.flip-card-front').forEach(front => {
+    front.addEventListener('click', () => {
+      front.closest('.flip-card-inner').classList.add('flipped');
+    });
+  });
+
+
+  document.querySelectorAll(".flip-card-back").forEach(back => {
+    back.addEventListener('click', () => {
+      back.closest('.flip-card-inner').classList.remove('flipped')
+    })
+  })
+</script>
 </html>
