@@ -35,7 +35,7 @@
   .hero-sub { font-family: 'Caveat', cursive; font-size: 1.3rem; color: #9a5f2a; text-align: center; margin-bottom: 2rem; }
 
   .divider { display: flex; align-items: center; gap: 12px; margin: 2rem 0; }
-  .divider-line { flex: 1; height: 1px; background: #c4a070; }
+  .divider-line { width: 100%; height: 1px; background: #c4a070; }
   .divider-icon { color: #b06530; font-size: 18px; }
 
   .section-label { font-family: 'Caveat', cursive; font-size: 1.1rem; color: #8a5020; margin-bottom: 1rem; display: flex; align-items: center; gap: 8px; }
@@ -111,24 +111,12 @@
     flex-direction: column;
     padding: 1rem;
   }
-  .back-text {
-    flex: 1;
-    font-family: 'Caveat', cursive;
-    font-size: 1rem;
-    color: #3b2a1a;
-    outline: none;
-    line-height: 1.7;
-  }
-  .back-text:empty::before {
-    content: attr(placeholder);
-    color: #b09070;
-  }
-  .flip-back-btn {
-    font-family: 'Caveat', cursive;
-    font-size: 0.8rem;
-    color: #9a6030;
-    cursor: pointer;
-    text-align: right;
+  .flip-card-back-content {
+    height: 100%; 
+    display: flex; 
+    flex-direction: column; 
+    align-items: center;
+    justify-content: center;
   }
 
   @media(max-width: 600px) {
@@ -163,12 +151,11 @@
           <!-- BACK-->
           <div class="flip-card-back">
             <div class="photo-tape"></div>
-            <div style="text-align: center;">
+            <div class="flip-card-back-content">
               <p class="hero-title" style="font-size: x-large;"> Our First Big Concert!</p>
               <div class="divider-line"></div>
-              
+              <p class="hero-sub">April 2025</p>
             </div>
-            <p class="hero-sub" style="margin-top: auto;">test</p>
           </div>
         </div>
       </div>
@@ -182,9 +169,10 @@
           <!-- BACK-->
           <div class="flip-card-back">
             <div class="photo-tape"></div>
-            <div style="text-align: center;">
+            <div class="flip-card-back-content">
               <p class="hero-title" style="font-size: x-large;"> Parties with our friends!</p>
               <div class="divider-line"></div>
+              <p class="hero-sub">August 2025</p>
             </div>
           </div>
         </div>
@@ -200,9 +188,10 @@
           <!-- BACK-->
           <div class="flip-card-back">
             <div class="photo-tape"></div>
-            <div style="text-align: center;">
+            <div class="flip-card-back-content">
               <p class="hero-title" style="font-size: x-large;">Hiding from Seattle Rain!</p>
               <div class="divider-line"></div>
+              <p class="hero-sub">November 2025</p>
             </div>
           </div>
         </div>
@@ -217,9 +206,10 @@
           <!-- BACK-->
           <div class="flip-card-back">
             <div class="photo-tape"></div>
-            <div style="text-align: center;">
+            <div class="flip-card-back-content">
               <p class="hero-title" style="font-size: x-large;">Oktoberfest!</p>
               <div class="divider-line"></div>
+              <p class="hero-sub">November 2025</p>
             </div>
           </div>
         </div>
@@ -234,9 +224,10 @@
           <!-- BACK-->
           <div class="flip-card-back">
             <div class="photo-tape"></div>
-            <div style="text-align: center;">
+            <div class="flip-card-back-content">
               <p class="hero-title" style="font-size: x-large;">Corn Maze!</p>
               <div class="divider-line"></div>
+              <p class="hero-sub">October 2024</p>
             </div>
           </div>
         </div>
@@ -252,9 +243,10 @@
           <!-- BACK-->
           <div class="flip-card-back">
             <div class="photo-tape"></div>
-            <div style="text-align: center;">
+            <div class="flip-card-back-content">
               <p class="hero-title" style="font-size: x-large;">Disneyland!</p>
               <div class="divider-line"></div>
+              <p class="hero-sub">June 2025</p>
             </div>
           </div>
         </div>
